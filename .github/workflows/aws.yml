@@ -8,8 +8,8 @@ env:
   ECS_CLUSTER: app_cluster
   CONTAINER_NAME: webapp
   ECS_SERVICE: webapp_service
-  ACCESS_KEY: "AKIAQHUP7G63FNTAI7FH"
-  SECRET_KEY: "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"
+  #ACCESS_KEY: "AKIAQHUP7G63FNTAI7FH"
+  #SECRET_KEY: "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"
   ECS_TD: .github/workflows/td.json
 
 jobs:
@@ -24,8 +24,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ env.ACCESS_KEY }}
-          aws-secret-access-key: ${{ env.SECRET_KEY }}
+          aws-access-key-id: ${{ var.ACCESS_KEY }}
+          aws-secret-access-key: ${{ var.SECRET_KEY }}
           aws-region: "us-east-1"
 
       - name: Login to Amazon ECR
